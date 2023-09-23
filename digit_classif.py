@@ -71,6 +71,8 @@ test_sizes = [0.1, 0.2, 0.3]
 dev_sizes = [0.1, 0.2, 0.3]
 param_combinations = product(test_sizes, dev_sizes)
 
+
+
 for test_size, dev_size in param_combinations:
     # split the data into train, dev, and test sets
     X_train, X_dev, X_test, y_train, y_dev, y_test = split_data(data, digits.target, test_size, dev_size)
@@ -92,8 +94,16 @@ for test_size, dev_size in param_combinations:
     test_accuracy = accuracy_score(y_test, y_test_pred)
 
     # printing the output as per assignment3 
-    print(f"test_size={test_size} dev_size={dev_size} train_size={1 - test_size - dev_size:0.1f}\n"
-          f"train_acc={train_accuracy:.2f} dev_acc={dev_accuracy:.2f} test_acc={test_accuracy:.2f}")
-    print(f"Best Hyperparameters: {best_hparams}\n")
+    #print(f"test_size={test_size} dev_size={dev_size} train_size={1 - test_size - dev_size:0.1f}\n"
+          #f"train_acc={train_accuracy:.2f} dev_acc={dev_accuracy:.2f} test_acc={test_accuracy:.2f}")
+    #print(f"Best Hyperparameters: {best_hparams}\n")
+
+total_samples = len(digits.images)
+print(f"Total number of samples in the dataset: {total_samples}")
+
+
+image_height, image_width = digits.images.shape[1], digits.images.shape[2]
+print(f"Size of the images in the dataset (height x width): {image_height} x {image_width}")
+
 
 
