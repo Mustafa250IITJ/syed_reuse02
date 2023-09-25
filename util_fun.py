@@ -6,9 +6,7 @@ from sklearn import svm
 def split_data(X, y, test_size, dev_size):
     train_size = 1 - test_size - dev_size
     X_temp, X_test, y_temp, y_test = train_test_split(X, y, test_size=test_size, shuffle=False)
-##    X_train, X_dev, y_train, y_dev = train_test_split(X_temp, y_temp, test_size=dev_size / (dev_size + train_size), shuffle=False)
-##    X_train, X_dev, y_train, y_dev = train_test_split(X_temp, y_temp, test_size=dev_size/(1-test_size), random_state=1)
-    X_train, X_dev, y_train, y_dev = train_test_split(X_temp, y_temp, test_size=0.5, shuffle=False)
+    X_train, X_dev, y_train, y_dev = train_test_split(X_temp, y_temp, test_size=dev_size / (dev_size + train_size), shuffle=False)
     return X_train, X_dev, X_test, y_train, y_dev, y_test
 
 def tune_hparams(X_train, y_train, X_dev, y_dev, param_comb):
