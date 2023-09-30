@@ -19,6 +19,6 @@ jobs:
           ls -r ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Install dep
-        run:  pip3 install -r requirements.txt
+        run:  pip3 install --no-cache-dir -r requirements.txt
       - name: Run digit classification for resize images Q3
         run: python digit_classif.py
