@@ -21,6 +21,6 @@ jobs:
       - name: Install dep
         run:  pip3 install --no-cache-dir -r requirements.txt
       - name: Run test cases
-      - run: echo "First Question of Quiz"
+      - name: First Question of Quiz
       - name: Run digit classification
         run: python digit_classif.py
